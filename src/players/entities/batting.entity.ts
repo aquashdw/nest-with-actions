@@ -1,10 +1,10 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Region {
+export class BattingSide {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  name: string;
+  side: string;
 }

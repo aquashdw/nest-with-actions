@@ -1,10 +1,13 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Region {
+export class PitchStyle {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  name: string;
+  hand: string;
+
+  @Column()
+  style: string;
 }

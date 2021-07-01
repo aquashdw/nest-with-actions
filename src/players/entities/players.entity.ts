@@ -1,23 +1,32 @@
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Region } from '../../entities/app.entity';
+import { Position } from './position.entity';
+import { PitchStyle } from './pitch.entity';
+import { BattingSide } from './batting.entity';
+
+@Entity()
 export class Player {
+  @PrimaryGeneratedColumn()
   id: number;
+
+  @Column()
   username: string;
+
+  @Column()
   name: string;
+
+  @Column()
   age: number;
-}
 
-export class Position {
-  id: number;
-  name: string;
-  positionNumber: number;
-}
+  @ManyToOne(() => Position, (position) => position.id)
+  mainPosition: Position;
 
-export class PitchHand {
-  id: number;
-  hand: string;
-  style: string;
-}
+  @ManyToOne(() => PitchStyle, (pitchStyle) => pitchStyle.id)
+  pitch: PitchStyle;
 
-export class SwingSide {
-  id: number;
-  side: string;
+  @ManyToOne(() => BattingSide, (battingSide) => battingSide.id)
+  batting: BattingSide;
+
+  @ManyToOne(() => Region, (region) => region.id)
+  region: Region;
 }
