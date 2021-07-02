@@ -1,5 +1,5 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
-import { Region } from '../../entities/app.entity';
+import { Region } from '../../entities/region.entity';
 import { Position } from './position.entity';
 import { PitchStyle } from './pitch.entity';
 import { BattingSide } from './batting.entity';

@@ -1,4 +1,4 @@
-import { Region } from '../../entities/app.entity';
+import { Region } from '../../entities/region.entity';
 import {
   Column,
   Entity,
@@ -7,7 +7,7 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { Player } from '../../players/entities/players.entity';
+import { Player } from '../../players/entities/player.entity';
 import { options } from 'tsconfig-paths/lib/options';
 
 @Entity()
