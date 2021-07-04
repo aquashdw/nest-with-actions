@@ -6,7 +6,7 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { Region } from '../../entities/region.entity';
+import { Region } from '../../region/entities/region.entity';
 import { Team } from '../../teams/entities/team.entitiy';
 
 @Entity()

@@ -1,4 +1,4 @@
-import { Region } from '../../entities/region.entity';
+import { Region } from '../../region/entities/region.entity';
 import {
   Column,
   Entity,
