@@ -9,7 +9,7 @@ export class TeamsController {
   }
 
   @Get('/:id')
-  readTeam(@Param('id') playerId: number): Team {
+  readTeam(@Param('id') teamId: number): Team {
     return null;
   }
 
@@ -19,7 +19,7 @@ export class TeamsController {
   }
 
   @Patch('/:id')
-  updateTeam(@Param('id') playerId: number) {
+  updateTeam(@Param('id') teamId: number) {
     return null;
   }
 
