@@ -17,7 +17,7 @@ import { RegionModule } from './region/region.module';
     TypeOrmModule.forRoot({
       type: 'mariadb',
       host: 'localhost',
-      port: 3306,
+      port: 3307,
       username: 'nest',
       password: 'password',
       database: 'b_players',

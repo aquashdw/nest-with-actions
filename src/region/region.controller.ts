@@ -1,15 +1,15 @@
 import { Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
-import { Player } from '../players/entities/player.entity';
+import { Region } from './entities/region.entity';
 
 @Controller('region')
 export class RegionController {
   @Get()
-  readAllRegions(): Player[] {
+  readAllRegions(): Region[] {
     return null;
   }
 
   @Get('/:id')
-  readRegion(@Param('id') regionId: number): Player {
+  readRegion(@Param('id') regionId: number): Region {
     return null;
   }
 
