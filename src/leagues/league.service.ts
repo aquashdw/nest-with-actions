@@ -33,9 +33,15 @@ export class LeagueService {
   async createLeague(createLeagueDto: CreateLeagueDto) {
     const createEntity: League = new League();
 
-    createEntity.region = await this.regionRepository.findOne({
-      id: createLeagueDto.regionId,
-    });
+    createEntity.region = await this.regionRepository
+      .findOneOrFail({
+        id: createLeagueDto.regionId,
+      })
+      .catch((reason) => {
+        throw new NotFoundException(
+          `region with id: ${createLeagueDto.regionId} not found`,
+        );
+      });
 
     if (createLeagueDto.teams != null) {
       createEntity.leagueTeams = await this.teamRepository.findByIds(
@@ -56,9 +62,15 @@ export class LeagueService {
     updateTarget.name = updateLeagueDto.name;
 
     if (updateLeagueDto.regionId != null) {
-      updateTarget.region = await this.regionRepository.findOne({
-        id: updateLeagueDto.regionId,
-      });
+      updateTarget.region = await this.regionRepository
+        .findOneOrFail({
+          id: updateLeagueDto.regionId,
+        })
+        .catch((reason) => {
+          throw new NotFoundException(
+            `region with id: ${updateLeagueDto.regionId} not found`,
+          );
+        });
     }
 
     if (updateLeagueDto.teams != null) {
