@@ -8,7 +8,7 @@ import { PitchStyle } from './players/entities/pitch.entity';
 import { BattingSide } from './players/entities/batting.entity';
 import { TeamsModule } from './teams/teams.module';
 import { Team } from './teams/entities/team.entitiy';
-import { LeaguesModule } from './leagues/leagues.module';
+import { LeagueModule } from './leagues/league.module';
 import { League } from './leagues/entities/league.entity';
 import { RegionModule } from './region/region.module';
 
@@ -36,7 +36,7 @@ import { RegionModule } from './region/region.module';
     }),
     PlayersModule,
     TeamsModule,
-    LeaguesModule,
+    LeagueModule,
     RegionModule,
   ],
   controllers: [],
