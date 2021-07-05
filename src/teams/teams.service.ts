@@ -6,6 +6,7 @@ import { Player } from '../players/entities/player.entity';
 import { League } from '../leagues/entities/league.entity';
 import { Region } from '../region/entities/region.entity';
 import { CreateTeamDto } from './dto/create-team.dto';
+import { UpdateTeamDto } from './dto/update-team.dto';
 
 @Injectable()
 export class TeamsService {
@@ -51,6 +52,36 @@ export class TeamsService {
     }
 
     await this.teamRepository.insert(createEntity);
+  }
+
+  async updateTeam(teamId: number, updateTeamDto: UpdateTeamDto) {
+    const updateTarget = await this.teamRepository
+      .findOneOrFail({ id: teamId })
+      .catch((reason) => {
+        throw new NotFoundException(`team with id: ${teamId} not found`);
+      });
+
+    if (updateTeamDto.name != null) {
+      updateTarget.name = updateTeamDto.name;
+    }
+
+    if (updateTeamDto.regionId != null) {
+      updateTarget.region = await this.regionRepository
+        .findOneOrFail({ id: updateTeamDto.regionId })
+        .catch((reason) => {
+          throw new NotFoundException(
+            `region with id: ${updateTeamDto.regionId} not found`,
+          );
+        });
+
+      if (updateTeamDto.players != null) {
+        updateTarget.teamPlayers = await this.playerRepository.findByIds([
+          updateTeamDto.players,
+        ]);
+      }
+
+      await this.teamRepository.save(updateTarget);
+    }
   }
 
   async deleteTeam(teamId: number) {

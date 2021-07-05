@@ -59,7 +59,9 @@ export class LeagueService {
         throw new NotFoundException(`league with id: ${leagueId} not found`);
       });
 
-    updateTarget.name = updateLeagueDto.name;
+    if (updateLeagueDto.name != null) {
+      updateTarget.name = updateLeagueDto.name;
+    }
 
     if (updateLeagueDto.regionId != null) {
       updateTarget.region = await this.regionRepository
