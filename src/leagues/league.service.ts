@@ -31,7 +31,7 @@ export class LeagueService {
   }
 
   async createLeague(createLeagueDto: CreateLeagueDto) {
-    const createEntity: League = new League();
+    const createEntity = new League();
 
     createEntity.region = await this.regionRepository
       .findOneOrFail({
