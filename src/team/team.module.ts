@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { TeamsController } from './teams.controller';
-import { TeamsService } from './teams.service';
+import { TeamController } from './team.controller';
+import { TeamService } from './team.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { League } from '../leagues/entities/league.entity';
 import { Region } from '../region/entities/region.entity';
@@ -9,7 +9,7 @@ import { Player } from '../players/entities/player.entity';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Player, Team, League, Region])],
-  controllers: [TeamsController],
-  providers: [TeamsService],
+  controllers: [TeamController],
+  providers: [TeamService],
 })
-export class TeamsModule {}
+export class TeamModule {}

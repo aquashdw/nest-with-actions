@@ -4,7 +4,7 @@ import { LeagueController } from './league.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { League } from './entities/league.entity';
 import { Region } from '../region/entities/region.entity';
-import { Team } from '../teams/entities/team.entitiy';
+import { Team } from '../team/entities/team.entitiy';
 
 @Module({
   imports: [TypeOrmModule.forFeature([League, Region, Team])],

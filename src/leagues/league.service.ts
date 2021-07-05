@@ -4,7 +4,7 @@ import { League } from './entities/league.entity';
 import { Repository } from 'typeorm';
 import { CreateLeagueDto } from './dto/create-league.dto';
 import { Region } from '../region/entities/region.entity';
-import { Team } from '../teams/entities/team.entitiy';
+import { Team } from '../team/entities/team.entitiy';
 import { UpdateLeagueDto } from './dto/update-league.dto';
 
 @Injectable()
@@ -33,6 +33,7 @@ export class LeagueService {
   async createLeague(createLeagueDto: CreateLeagueDto) {
     const createEntity = new League();
 
+    createEntity.name = createLeagueDto.name;
     createEntity.region = await this.regionRepository
       .findOneOrFail({
         id: createLeagueDto.regionId,

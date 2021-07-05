@@ -10,13 +10,13 @@ import {
   Post,
 } from '@nestjs/common';
 import { Team } from './entities/team.entitiy';
-import { TeamsService } from './teams.service';
+import { TeamService } from './team.service';
 import { CreateTeamDto } from './dto/create-team.dto';
 import { UpdateTeamDto } from './dto/update-team.dto';
 
-@Controller('teams')
-export class TeamsController {
-  constructor(private readonly teamsService: TeamsService) {}
+@Controller('team')
+export class TeamController {
+  constructor(private readonly teamsService: TeamService) {}
 
   @Get()
   async readAllTeams(): Promise<Team[]> {
