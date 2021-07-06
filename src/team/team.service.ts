@@ -2,7 +2,7 @@ import { Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Team } from './entities/team.entitiy';
 import { Repository } from 'typeorm';
-import { Player } from '../players/entities/player.entity';
+import { Player } from '../player/entities/player.entity';
 import { League } from '../league/entities/league.entity';
 import { Region } from '../region/entities/region.entity';
 import { CreateTeamDto } from './dto/create-team.dto';

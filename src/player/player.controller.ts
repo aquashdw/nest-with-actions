@@ -10,13 +10,13 @@ import {
   Post,
 } from '@nestjs/common';
 import { Player } from './entities/player.entity';
-import { PlayersService } from './players.service';
+import { PlayerService } from './player.service';
 import { CreatePlayerDto } from './dto/create-player.dto';
 import { UpdatePlayerDto } from './dto/update-player.dto';
 
-@Controller('players')
-export class PlayersController {
-  constructor(private readonly playersService: PlayersService) {}
+@Controller('player')
+export class PlayerController {
+  constructor(private readonly playersService: PlayerService) {}
 
   @Get()
   async readAllPlayers(): Promise<Player[]> {

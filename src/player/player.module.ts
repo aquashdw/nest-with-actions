@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { PlayersService } from './players.service';
-import { PlayersController } from './players.controller';
+import { PlayerService } from './player.service';
+import { PlayerController } from './player.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Player } from './entities/player.entity';
 import { Region } from '../region/entities/region.entity';
@@ -18,7 +18,7 @@ import { BattingSide } from './entities/batting.entity';
       Region,
     ]),
   ],
-  controllers: [PlayersController],
-  providers: [PlayersService],
+  controllers: [PlayerController],
+  providers: [PlayerService],
 })
-export class PlayersModule {}
+export class PlayerModule {}

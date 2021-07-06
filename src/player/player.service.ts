@@ -10,7 +10,7 @@ import { BattingSide } from './entities/batting.entity';
 import { UpdatePlayerDto } from './dto/update-player.dto';
 
 @Injectable()
-export class PlayersService {
+export class PlayerService {
   constructor(
     @InjectRepository(Player)
     private readonly playerRepository: Repository<Player>,
