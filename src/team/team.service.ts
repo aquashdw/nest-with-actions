@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Team } from './entities/team.entitiy';
 import { Repository } from 'typeorm';
 import { Player } from '../players/entities/player.entity';
-import { League } from '../leagues/entities/league.entity';
+import { League } from '../league/entities/league.entity';
 import { Region } from '../region/entities/region.entity';
 import { CreateTeamDto } from './dto/create-team.dto';
 import { UpdateTeamDto } from './dto/update-team.dto';

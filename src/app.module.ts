@@ -8,8 +8,8 @@ import { PitchStyle } from './players/entities/pitch.entity';
 import { BattingSide } from './players/entities/batting.entity';
 import { TeamModule } from './team/team.module';
 import { Team } from './team/entities/team.entitiy';
-import { LeagueModule } from './leagues/league.module';
-import { League } from './leagues/entities/league.entity';
+import { LeagueModule } from './league/league.module';
+import { League } from './league/entities/league.entity';
 import { RegionModule } from './region/region.module';
 
 @Module({
