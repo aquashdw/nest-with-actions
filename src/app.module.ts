@@ -31,7 +31,7 @@ import { RegionModule } from './region/region.module';
         League,
       ],
       autoLoadEntities: true,
-      synchronize: true,
+      synchronize: parseInt(process.env.DB_SYNC) == 1 || false,
       insecureAuth: true,
     }),
     PlayerModule,
