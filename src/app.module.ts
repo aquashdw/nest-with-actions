@@ -16,11 +16,11 @@ import { RegionModule } from './region/region.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mariadb',
-      host: 'localhost',
-      port: 3307,
-      username: 'nest',
-      password: 'password',
-      database: 'b_players',
+      host: process.env.DB_HOST || 'localhost',
+      port: parseInt(process.env.DB_PORT) || 3307,
+      username: process.env.DB_USER || 'nest',
+      password: process.env.DB_PASS || 'password',
+      database: process.env.DB_DATABASE || 'b_players',
       entities: [
         Region,
         Position,
