@@ -24,14 +24,11 @@ export class RegionService {
       });
   }
 
-  async createRegion(createRegionDto: CreateRegionDto): Promise<void> {
+  async createRegion(createRegionDto: CreateRegionDto) {
     await this.regionRepository.insert({ name: createRegionDto.name });
   }
 
-  async updateRegion(
-    regionId: number,
-    updateRegionDto: UpdateRegionDto,
-  ): Promise<void> {
+  async updateRegion(regionId: number, updateRegionDto: UpdateRegionDto) {
     const updateTarget: Region = await this.regionRepository
       .findOneOrFail({ id: regionId })
       .catch((reason) => {
@@ -41,7 +38,7 @@ export class RegionService {
     await this.regionRepository.save(updateTarget);
   }
 
-  async deleteRegion(regionId: number): Promise<void> {
+  async deleteRegion(regionId: number) {
     await this.regionRepository.delete({ id: regionId });
   }
 }

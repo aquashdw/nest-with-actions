@@ -1,15 +1,15 @@
-import { Module } from '@nestjs/common';
-import { PlayersModule } from './players/players.module';
+import { Logger, Module } from '@nestjs/common';
+import { PlayerModule } from './player/player.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Player } from './players/entities/player.entity';
+import { Player } from './player/entities/player.entity';
 import { Region } from './region/entities/region.entity';
-import { Position } from './players/entities/position.entity';
-import { PitchStyle } from './players/entities/pitch.entity';
-import { BattingSide } from './players/entities/batting.entity';
-import { TeamsModule } from './teams/teams.module';
-import { Team } from './teams/entities/team.entitiy';
-import { LeaguesModule } from './leagues/leagues.module';
-import { League } from './leagues/entities/league.entity';
+import { Position } from './player/entities/position.entity';
+import { PitchStyle } from './player/entities/pitch.entity';
+import { BattingSide } from './player/entities/batting.entity';
+import { TeamModule } from './team/team.module';
+import { Team } from './team/entities/team.entitiy';
+import { LeagueModule } from './league/league.module';
+import { League } from './league/entities/league.entity';
 import { RegionModule } from './region/region.module';
 
 @Module({
@@ -34,9 +34,9 @@ import { RegionModule } from './region/region.module';
       synchronize: true,
       insecureAuth: true,
     }),
-    PlayersModule,
-    TeamsModule,
-    LeaguesModule,
+    PlayerModule,
+    TeamModule,
+    LeagueModule,
     RegionModule,
   ],
   controllers: [],

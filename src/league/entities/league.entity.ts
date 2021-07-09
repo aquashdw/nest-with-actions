@@ -7,7 +7,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Region } from '../../region/entities/region.entity';
-import { Team } from '../../teams/entities/team.entitiy';
+import { Team } from '../../team/entities/team.entitiy';
 
 @Entity()
 export class League {

@@ -7,7 +7,7 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { Player } from '../../players/entities/player.entity';
+import { Player } from '../../player/entities/player.entity';
 import { options } from 'tsconfig-paths/lib/options';
 
 @Entity()
