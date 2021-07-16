@@ -2,7 +2,7 @@
 A simple NestJS project to practice CI/CD tools, beginning with github actions.
 Normally I'd use Spring Boot, but the project I'm participating with requires NestJS so for the sake of practicing...
 
-Below are auto-generated with `nest generate application`.
+Below are auto-generated with `nest new`.
 
 ---
 
